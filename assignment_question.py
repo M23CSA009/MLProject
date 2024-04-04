@@ -70,10 +70,11 @@ class CNN(nn.Module):
         )
 
         self.classifier = nn.Sequential(
+            # changed the output of the linear layer
             nn.Flatten(),
-            nn.Linear(256, 128),
+            nn.Linear(256, 32),
             nn.ReLU(),
-            nn.Linear(128, 10)
+            nn.Linear(32, 10)
         )
 
     def forward(self, x):
